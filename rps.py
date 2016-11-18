@@ -1,32 +1,42 @@
-# Simple if elif else rock paper siccors program
+import random
 
-player_one = raw_input("Player one please choose: ")
-player_two = raw_input("Player two please choose: ")
+def rps(player_one):
 
-if(player_one != "Stone" and player_one != "Scissors" and player_one != "Paper"):
-    player_one = raw_input("Player one please choose: Stone, Scissors or Paper: ")
-   
-if(player_two != "Stone" and player_two != "Scissors" and player_two != "Paper"):
-    player_two = raw_input("Player two lease choose: Stone, Scissors or Paper: ")
+    ai_choice = random.randrange(1, 4)
 
-if(player_one == "Stone"):
-    if(player_two == "Stone"):
-        print "It's a tie."
-    elif(player_two == "Scissors"):
-            print "Player one wins!"
-    else: print "Player two wins!"
+    if(ai_choice == 1):
+        player_two = "Stone"
 
-if(player_one == "Scissors"):
-    if(player_two == "Stone"):
-        print "Player two wins!"
-    elif(player_two == "Scissors"):
-        print "It's a tie."
-    else: print "Player one wins!"
+    if(ai_choice == 2):
+        player_two = "Scissors"
 
-if(player_one == "Paper"):
-    if(player_two == "Stone"):
-        print "Player one wins!"
-    elif(player_two == "Scissors"):
-        print "Player two wins!"
-    else: print "It's a tie."
+    if(ai_choice == 3):
+        player_two = "Paper"
+
+    while(player_one != "Stone" and player_one != "Scissors" and player_one != "Paper"):
+        player_one = raw_input("Player one please choose: Stone, Scissors or Paper: ")
+
+    print "Your opponent choose: " + player_two
+
+    if(player_one == "Stone"):
+        if(player_two == "Stone"):
+            return "It's a tie."
+        elif(player_two == "Scissors"):
+            return "You win!"
+        else: return "You lose!"
+
+    if(player_one == "Scissors"):
+        if(player_two == "Stone"):
+            return "You lose!"
+        elif(player_two == "Scissors"):
+            return "It's a tie."
+        else: return "You win!"
+
+    if(player_one == "Paper"):
+        if(player_two == "Stone"):
+            return "You win!"
+        elif(player_two == "Scissors"):
+            return "You lose!"
+        else: return "It's a tie."
+
 
