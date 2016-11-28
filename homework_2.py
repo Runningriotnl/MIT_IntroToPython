@@ -3,6 +3,7 @@
 # hw2.py
 
 import math
+import random
 
 ##### Template for Homework 2, exercises 2.0 - 2.5  ######
 
@@ -126,17 +127,39 @@ def multadd(A, B, C):
 # ********** Exercise 2.4 **********
 
 ## 1 - rand_divis_3 function
-##### YOUR CODE HERE #####
+
+def rand_divis_3():
+    case = random.randint(0, 100)
+    print case
+    if(case % 3 == 0):
+        return True
+    else:
+        return False
 
 # Test Cases
-##### YOUR CODE HERE #####
+
+rand_divis_3()
+rand_divis_3()
+rand_divis_3()
 
 ## 2 - roll_dice function - remember that a die's lowest number is 1;
                             #its highest is the number of sides it has
-##### YOUR CODE HERE #####
+
+
+def roll_dice(sides, amount):
+
+    y = 0
+    
+    for x in xrange(0,amount):
+        y = y + random.randint(1, sides)
+                
+    return y
 
 # Test Cases
-##### YOUR CODE HERE #####                            
+
+roll_dice(6, 3)
+roll_dice(5, 20)
+roll_dice(4, 900)
 
 
 # ********** Exercise 2.5 **********
